@@ -63,11 +63,8 @@ class ShortLinkServiceTest {
         val shortLink = shortLinkService.getShortLink(shortUrlId)
 
         // Then
-        // case1. shortUrl은 입력한 shortUrl과 같아야 함
         assert(shortLink.shortUrlId == shortUrlId)
-
-        // case2. originUrl은 3글자 이상의 alpha-numeric 한 unique 문자열
-        assert(shortLink.originUrl.length >= 3)
-        assert(shortLink.originUrl.matches(Regex("[a-zA-Z0-9]+")))
+        assert(shortLink.shortUrlId.length >= 3)
+        assert(shortLink.shortUrlId.matches(Regex("[a-zA-Z0-9]+")))
     }
 }
